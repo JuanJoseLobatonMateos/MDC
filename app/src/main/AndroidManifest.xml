@@ -15,7 +15,6 @@
         <activity
             android:name=".ScrollingActivity"
             android:exported="true"
-            android:label="@string/title_activity_scrolling"
             android:theme="@style/Theme.MDC.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
