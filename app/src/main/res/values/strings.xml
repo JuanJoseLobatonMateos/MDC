@@ -99,4 +99,8 @@
     <string name="card_title">Black Friday!</string>
     <string name="card_enable_password">Enable Password</string>
     <string name="card_password">password</string>
+    <string name="card_toogle_red">Red</string>
+    <string name="card_toogle_blue">Blue</string>
+    <string name="card_toogle_green">Green</string>
+    <string name="message_action_success">Evento existoso!</string>
 </resources>
