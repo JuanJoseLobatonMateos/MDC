@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/common_padding_min"
             android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min"
             android:layout_marginEnd="@dimen/common_padding_min"
             android:clickable="true"
             android:focusable="true">
@@ -24,46 +25,184 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/common_padding_default"
                 android:paddingStart="@dimen/common_padding_default"
-                android:paddingEnd="@dimen/common_padding_default">
+                android:paddingTop="@dimen/common_padding_default"
+                android:paddingEnd="@dimen/common_padding_default"
+                tools:ignore="ExtraText">
+
                 <ImageView
                     android:id="@+id/img_card"
                     android:layout_width="@dimen/card_img_size"
                     android:layout_height="@dimen/card_img_size"
                     android:importantForAccessibility="no"
+                    android:src="@mipmap/ic_launcher"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:src="@mipmap/ic_launcher"/>
+                    tools:ignore="ImageContrastCheck" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnBuy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_padding_min"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:gravity="center"
                     android:text="@string/card_btn_buy"
                     app:icon="@drawable/ic_shop"
-                    android:gravity="center"
-                    android:layout_marginTop="@dimen/common_padding_min"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/img_card"/>
+                    app:layout_constraintTop_toBottomOf="@id/img_card"
+                    tools:ignore="TextContrastCheck" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_skip"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/card_btn_skip"
+                    android:textColor="@android:color/holo_red_dark"
                     app:layout_constraintEnd_toStartOf="@id/btnBuy"
-                    app:layout_constraintTop_toTopOf="@id/btnBuy"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"/>
-                
+                    app:layout_constraintTop_toTopOf="@id/btnBuy" />
+
                 <TextView
                     android:id="@+id/tvTitle"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    android:text="@string/card_title"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img_card"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:ellipsize="end"
+                    android:justificationMode="inter_word"
+                    android:maxLines="4"
+                    android:text="@string/large_text"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    app:layout_constraintBottom_toBottomOf="@id/img_card"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitle"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                    tools:targetApi="o" />
+                "
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </com.google.android.material.card.MaterialCardView>
-        
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_cover"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/card_img_cover_height"
+                    android:background="@color/design_default_color_secondary"
+                    android:importantForAccessibility="no"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tvTitleAlt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:text="@string/card_title"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_cover" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUrl"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/card_required"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitleAlt"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleAlt"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleAlt">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/card_input_url"
+                        android:inputType="textUri"
+                        tools:ignore="TextContrastCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    android:enabled="false"
+                    android:hint="@string/card_password"
+                    app:endIconMode="password_toggle"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitleAlt"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleAlt"
+                    app:layout_constraintTop_toBottomOf="@id/tilUrl">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbEnablePass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/card_enable_password"
+                    app:layout_constraintTop_toBottomOf="@id/tilPassword"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_title"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleAlt"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitleAlt"
+                    app:layout_constraintTop_toBottomOf="@id/cbEnablePass"/>
+
+                <TextView
+                    android:id="@+id/tvMessageAlt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/large_text"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:layout_marginTop="@dimen/common_padding_default"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleAlt"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitleAlt"
+                    app:layout_constraintTop_toBottomOf="@id/tvSubtitle"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

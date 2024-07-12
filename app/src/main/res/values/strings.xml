@@ -94,4 +94,9 @@
     <string name="add_task">Añadir tarea</string>
     <string name="card_btn_buy">Comprar</string>
     <string name="card_btn_skip">Skip</string>
+    <string name="card_required">Required\n</string>
+    <string name="card_input_url">image Url\n</string>
+    <string name="card_title">Black Friday!</string>
+    <string name="card_enable_password">Enable Password</string>
+    <string name="card_password">password</string>
 </resources>
